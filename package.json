@@ -1,0 +1,18 @@
+{
+  "name": "rakha_sesi8",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --recursive --reporter mochawesome",
+    "report" : "start chrome file:///D:/Latihan/Mini%20Bootcamp%20QA%20Digital%20Skoola%20Batch%208/Sesi%207%20(API%20AUTOMATION)/Rakha_sesi8/mochawesome-report/mochawesome.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "mocha": "^11.1.0",
+    "mochawesome": "^7.1.3"
+  }
+}

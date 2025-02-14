@@ -1,0 +1,255 @@
+{
+  "stats": {
+    "suites": 4,
+    "tests": 6,
+    "passes": 6,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-02-14T10:36:30.983Z",
+    "end": "2025-02-14T10:36:33.417Z",
+    "duration": 2434,
+    "testsRegistered": 6,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "be0eef03-8603-49b8-9c22-9a79c91f4697",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "da2dfe9e-0092-4a51-99a2-c2ee05f3ee10",
+          "title": "4. API Delete User",
+          "fullFile": "D:\\Latihan\\Mini Bootcamp QA Digital Skoola Batch 8\\Sesi 7 (API AUTOMATION)\\Rakha_sesi8\\test\\Rakha_API\\DeleteBooking.js",
+          "file": "\\test\\Rakha_API\\DeleteBooking.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Success Update User With Code 201",
+              "fullTitle": "4. API Delete User Success Update User With Code 201",
+              "timedOut": false,
+              "duration": 839,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "this.timeout(50000)\nconst url = 'https://reqres.in/api/users/639'\nconst response = await fetch(url, {\n    method : \"DELETE\",\n    headers :{\n        \"Content-Type\" : \"application/json\"\n    }\n});\nassert.strictEqual(response.status,204);",
+              "err": {},
+              "uuid": "bdec7f45-e692-4e18-8804-ab42efd1f2c3",
+              "parentUUID": "da2dfe9e-0092-4a51-99a2-c2ee05f3ee10",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "bdec7f45-e692-4e18-8804-ab42efd1f2c3"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 839,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "878af589-ec5e-45af-9d8e-e310ac99cf14",
+          "title": "1. API GetList User",
+          "fullFile": "D:\\Latihan\\Mini Bootcamp QA Digital Skoola Batch 8\\Sesi 7 (API AUTOMATION)\\Rakha_sesi8\\test\\Rakha_API\\GetBooking.js",
+          "file": "\\test\\Rakha_API\\GetBooking.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Success Get Data id",
+              "fullTitle": "1. API GetList User Success Get Data id",
+              "timedOut": false,
+              "duration": 189,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "this.timeout(5000)\nconst response = await fetch('https://reqres.in/api/users?id=7');\nconst dataResponse = await response.json()\nconst validate = ajv.compile(schema)\nconst valid = validate(dataResponse)\nif (!valid){\n    console.log(validate.error);\n}\nassert.ok(valid, \"response JSON must same with schema\")",
+              "err": {},
+              "uuid": "9953189a-4f84-48d1-9730-568bd663ec47",
+              "parentUUID": "878af589-ec5e-45af-9d8e-e310ac99cf14",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Success With code 200",
+              "fullTitle": "1. API GetList User Success With code 200",
+              "timedOut": false,
+              "duration": 91,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await fetch('https://reqres.in/api/users?id=7');\n        const dataResponse = await response.json()\n        \n        console.log(`Response API : ${JSON.stringify(dataResponse, null, 1)}`);\n        \n        assert.strictEqual(response.status,200);\n        assert.strictEqual(dataResponse.data.first_name,\"Michael\");",
+              "err": {},
+              "uuid": "079977f4-d434-4692-817d-af9aba01b507",
+              "parentUUID": "878af589-ec5e-45af-9d8e-e310ac99cf14",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "List User is not found with code 404",
+              "fullTitle": "1. API GetList User List User is not found with code 404",
+              "timedOut": false,
+              "duration": 51,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await fetch('https://reqres.in/api/users?id=100000');\nassert.strictEqual(response.status,404);",
+              "err": {},
+              "uuid": "46213fe9-866e-48dc-bc75-ec0fddb12062",
+              "parentUUID": "878af589-ec5e-45af-9d8e-e310ac99cf14",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "9953189a-4f84-48d1-9730-568bd663ec47",
+            "079977f4-d434-4692-817d-af9aba01b507",
+            "46213fe9-866e-48dc-bc75-ec0fddb12062"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 331,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "0d604a7e-efa3-4e23-8a38-82d12ed68789",
+          "title": "2. API Create User",
+          "fullFile": "D:\\Latihan\\Mini Bootcamp QA Digital Skoola Batch 8\\Sesi 7 (API AUTOMATION)\\Rakha_sesi8\\test\\Rakha_API\\PostBooking.js",
+          "file": "\\test\\Rakha_API\\PostBooking.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Success Create User With Code 201",
+              "fullTitle": "2. API Create User Success Create User With Code 201",
+              "timedOut": false,
+              "duration": 723,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "this.timeout(50000)\nconst url = 'https://reqres.in/api/users'\nconst DataCreate = {\n     \"name\": \"Rakha\",\n     \"job\": \"Project Documentor\"\n}\nconst response = await fetch(url, {\n    method : \"POST\",\n    headers :{\n        \"Content-Type\" : \"application/json\"\n    },\n    body : JSON.stringify(DataCreate) \n});\nconst dataResponse = await response.json()\nconst validate = ajv.compile(schema)\nconst valid = validate(dataResponse)\nif (!valid){\n    console.log(validate.error);\n}\nassert.ok(valid, \"response JSON must same with schema\")\nassert.strictEqual(response.status,201);\n\nconsole.log(\"Response Result : \"+JSON.stringify(dataResponse,null,1))\nconsole.log(\"Response Result : \"+JSON.stringify(dataResponse.id,null,1))",
+              "err": {},
+              "uuid": "cddcba31-ef0c-4595-bb80-0fc3afe6ab47",
+              "parentUUID": "0d604a7e-efa3-4e23-8a38-82d12ed68789",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "cddcba31-ef0c-4595-bb80-0fc3afe6ab47"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 723,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "a558189f-4190-468a-81fc-90d88c87c2db",
+          "title": "3. API Update User",
+          "fullFile": "D:\\Latihan\\Mini Bootcamp QA Digital Skoola Batch 8\\Sesi 7 (API AUTOMATION)\\Rakha_sesi8\\test\\Rakha_API\\UpdateBooking.js",
+          "file": "\\test\\Rakha_API\\UpdateBooking.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Success Update User With Code 201",
+              "fullTitle": "3. API Update User Success Update User With Code 201",
+              "timedOut": false,
+              "duration": 521,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "this.timeout(50000)\nconst url = 'https://reqres.in/api/users/639'\nconst DataUpdate = {\n     \"name\": \"Rakha\",\n     \"job\": \"SQA\"\n}\nconst response = await fetch(url, {\n    method : \"PUT\",\n    headers :{\n        \"Content-Type\" : \"application/json\"\n    },\n    body : JSON.stringify(DataUpdate) \n});\nconst dataResponse = await response.json()\nconst validate = ajv.compile(schema)\nconst valid = validate(dataResponse)\nif (!valid){\n    console.log(validate.error);\n}\nassert.ok(valid, \"response JSON must same with schema\")\nassert.strictEqual(response.status,200);\n\nconsole.log(\"Response Result : \"+JSON.stringify(dataResponse,null,1))",
+              "err": {},
+              "uuid": "8dc99727-aa81-427b-9b9f-37ff10d9dd93",
+              "parentUUID": "a558189f-4190-468a-81fc-90d88c87c2db",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "8dc99727-aa81-427b-9b9f-37ff10d9dd93"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 521,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "11.1.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
